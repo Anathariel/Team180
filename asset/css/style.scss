@@ -41,6 +41,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background-color: $white-bg;
 }
 
 img {
@@ -70,6 +71,7 @@ p {
 
 h1 {
     font-family: $oranienbaum;
+    color: $black;
 }
 
 h2,
@@ -90,7 +92,7 @@ header {
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-    position: relative;
+    position: fixed;
     z-index: 1;
 
     &>div.logo {
@@ -294,6 +296,60 @@ footer {
         &>nav.nav-menu {
             &>ul>li>a {
                 font-size: .9rem;
+            }
+        }
+    }
+}
+
+//^ --------- Homepage --------- //
+//* ------- HERO ------- //
+main#homepage {
+    margin-top: 150px;
+
+    &>section#introduction {
+        &>figure {
+            width: 100%;
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+            justify-content: space-between;
+
+            &>img {
+                margin: .5rem 0;
+                object-fit: cover;
+            }
+
+            &>figcaption {
+                min-height: 400px;
+                width: 85vw;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-evenly;
+                text-align: right;
+
+                &>h1 {
+                    font-size: 4.5rem;
+                    text-decoration: underline;
+                    -webkit-text-stroke: 1px $black;
+                    /* color | offset-x | offset-y | blur-radius */
+                    text-shadow: #0707073d 4px 0 4px;
+                }
+
+                &>p {
+                    font-size: .8rem;
+                }
+            }
+
+            @media screen and (min-width: 635px) {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+
+                &>img{
+                    width: 100%;
+                }
             }
         }
     }
