@@ -65,9 +65,15 @@ header {
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
+  position: relative;
+  z-index: 1;
 }
 header > div.logo {
   margin: 1rem;
+}
+header > .burger-menu {
+  display: none;
+  margin-left: 1rem;
 }
 header > nav.nav-menu {
   width: 80vw;
@@ -79,13 +85,123 @@ header > nav.nav-menu > ul {
   align-items: center;
   height: 100px;
 }
-header > nav.nav-menu > ul > li > a {
+header > nav.nav-menu > ul > li {
   position: relative;
+  padding: 5px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header > nav.nav-menu > ul > li::before, header > nav.nav-menu > ul > li::after {
+  content: "";
+  position: absolute;
+  display: block;
+}
+header > nav.nav-menu > ul > li::before {
+  height: 100%;
+  width: 0;
+  right: 0;
+  border-top: 2px solid #F8F8F8;
+  border-bottom: 2px solid #F8F8F8;
+  transition: all 500ms cubic-bezier(0.075, 0.81, 0.165, 1);
+}
+header > nav.nav-menu > ul > li::after {
+  background-color: transparent;
+  height: calc(100% - 4px);
+  width: 0;
+  left: 0;
+  transition: all 1s cubic-bezier(0.075, 0.81, 0.165, 1);
+}
+header > nav.nav-menu > ul > li:hover::before {
+  width: 100%;
+}
+header > nav.nav-menu > ul > li:hover::after {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 0.5rem;
+}
+header > nav.nav-menu > ul > li:hover > a {
+  color: #2E3532;
+}
+header > nav.nav-menu > ul > li > a {
+  z-index: 100;
   color: #E0E2DB;
   font-family: "Oranienbaum-regular";
   font-size: 2rem;
 }
-header > nav.nav-menu > ul > li > a:after, header > nav.nav-menu > ul > li > a:before {
+@media (max-width: 770px) {
+  header > nav.nav-menu > ul > li > a {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 635px) {
+  header > div.logo {
+    width: 80px;
+  }
+  header > nav.nav-menu > ul > li > a {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 635px) {
+  header > nav.nav-menu {
+    display: none;
+  }
+  header > .burger-menu {
+    display: block;
+    margin-left: 1rem;
+    position: absolute;
+    right: 5%;
+  }
+  header .nav-menu.active {
+    display: block;
+    background-color: #2E3532;
+    position: fixed;
+    top: 150px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+  }
+  header .nav-menu.active > ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 1rem;
+    margin: 1rem;
+    height: 100%;
+  }
+  header .nav-menu.active > ul > li > a {
+    font-size: 2rem;
+    padding: 1rem;
+  }
+}
+
+footer {
+  background-color: #2E3532;
+  width: 100vw;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+footer > nav.nav-menu {
+  width: 100vw;
+}
+footer > nav.nav-menu > ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+footer > nav.nav-menu > ul > li > a {
+  position: relative;
+  color: #E0E2DB;
+  font-family: "Oranienbaum-regular";
+  font-size: 1.5rem;
+}
+footer > nav.nav-menu > ul > li > a:after, footer > nav.nav-menu > ul > li > a:before {
   content: "";
   position: absolute;
   width: 0%;
@@ -95,29 +211,31 @@ header > nav.nav-menu > ul > li > a:after, header > nav.nav-menu > ul > li > a:b
   margin-top: 2px;
   transition: all 300ms ease-in;
 }
-header > nav.nav-menu > ul > li > a:after {
+footer > nav.nav-menu > ul > li > a:after {
   bottom: 0;
   left: 0;
 }
-header > nav.nav-menu > ul > li > a:before {
+footer > nav.nav-menu > ul > li > a:before {
   top: 0;
   right: 0;
 }
-header > nav.nav-menu > ul > li > a:hover::after {
+footer > nav.nav-menu > ul > li > a:hover::after {
   width: 100%;
   height: 1px;
   bottom: 0;
   background-color: #F8F8F8;
 }
-header > nav.nav-menu > ul > li > a:hover::before {
+footer > nav.nav-menu > ul > li > a:hover::before {
   width: 100%;
   height: 1px;
   top: 0;
   background-color: #F8F8F8;
 }
-
-footer {
-  background-color: #2E3532;
-  width: 100vw;
-  height: 150px;
+@media screen and (max-width: 635px) {
+  footer > div.logo {
+    width: 50px;
+  }
+  footer > nav.nav-menu > ul > li > a {
+    font-size: 0.9rem;
+  }
 }/*# sourceMappingURL=style.css.map */
