@@ -41,11 +41,13 @@ p {
   text-decoration: none;
   color: #2E3532;
   font-family: "AlegreyaSans-regular";
+  pointer-events: none;
 }
 
 h1 {
   font-family: "Oranienbaum-regular";
   color: #2E3532;
+  pointer-events: none;
 }
 
 h2,
@@ -54,6 +56,11 @@ h4,
 h5,
 h6 {
   font-family: "Marvel-regular";
+  pointer-events: none;
+}
+
+main {
+  margin-top: 150px;
 }
 
 header {
@@ -239,9 +246,6 @@ footer > nav.nav-menu > ul > li > a:hover::before {
   }
 }
 
-main#homepage {
-  margin-top: 150px;
-}
 main#homepage > section#introduction {
   max-height: 800px;
   height: 100%;
@@ -644,12 +648,364 @@ main#homepage > section#news > div.cards-wrapper > .card:after {
   }
 }
 
+main#blog {
+  text-align: center;
+}
+main#blog > h1 {
+  color: #BF555F;
+  font-size: 3.4rem;
+}
+main#blog > div.hr-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+main#blog > div.hr-container > hr.stylized-hr {
+  border: 0;
+  height: 1px;
+  background-color: #2E3532;
+  width: 80%;
+}
+main#blog > div.categories-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  padding-right: 0;
+}
+main#blog > div.categories-container > h3 {
+  color: #BF555F;
+  font-size: 1.3rem;
+}
+main#blog > div.categories-container > div.categories {
+  display: flex;
+  align-items: center;
+  margin: 0 1rem;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  width: 60%;
+  height: 100%;
+}
+main#blog > div.categories-container > div.categories > p {
+  padding: 0 0.3rem;
+  font-size: 0.8rem;
+}
+main#blog > div.categories-container > div.categories > p > span {
+  padding: 0 0.3rem;
+}
+main#blog > div.cards-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+main#blog > div.cards-wrapper > .card {
+  height: 355px;
+  width: 250px;
+  position: relative;
+  overflow: hidden;
+  padding: 1rem;
+  margin: 0.5rem;
+  display: flex;
+  align-items: flex-end;
+  --bg-filter-opacity: 0.5;
+  background-image: linear-gradient(rgba(0, 0, 0, var(--bg-filter-opacity)), rgba(0, 0, 0, var(--bg-filter-opacity))), var(--bg-img);
+  box-shadow: rgba(7, 7, 7, 0.2392156863) 4px 0 4px;
+  border-radius: 0.5rem;
+  border: 10px solid #F8F8F8;
+  font-size: 1.5em;
+  color: #E0E2DB;
+  transition: all, 0.5s;
+  text-align: left;
+}
+main#blog > div.cards-wrapper > .card > div {
+  margin: 0 2rem;
+  z-index: 9;
+}
+main#blog > div.cards-wrapper > .card > div > h1,
+main#blog > div.cards-wrapper > .card > div p {
+  color: #E0E2DB;
+  font-family: "Marvel-bold";
+}
+main#blog > div.cards-wrapper > .card > div > h1 {
+  margin: 0;
+  font-size: 2.1rem;
+  line-height: 1.2em;
+}
+main#blog > div.cards-wrapper > .card > div > p {
+  font-family: "AlegreyaSans-light";
+  font-size: 0.8rem;
+  margin-top: 0.5em;
+  line-height: 1.5rem;
+}
+main#blog > div.cards-wrapper > .card > div > div.tags {
+  display: flex;
+  margin-top: 1rem;
+}
+main#blog > div.cards-wrapper > .card > div > div.tags > div.tag {
+  font-size: 0.6rem;
+  font-family: "Marvel-bold";
+  background: #BF555F;
+  border-radius: 0.3rem;
+  padding: 0 0.5em;
+  margin-right: 0.5em;
+  line-height: 1.5em;
+  transition: all, 0.5s;
+}
+main#blog > div.cards-wrapper > .card > div > div.date {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 1rem;
+  font-family: "Marvel-bold";
+  padding: 1em;
+  line-height: 1em;
+  opacity: 0.8;
+}
+main#blog > div.cards-wrapper > .card:hover {
+  color: #BF555F;
+}
+main#blog > div.cards-wrapper > .card:hover:hover h1, main#blog > div.cards-wrapper > .card:hover:hover p {
+  color: #BF555F;
+}
+main#blog > div.cards-wrapper > .card:hover .tags .tag {
+  background: #BF555F;
+  color: #F8F8F8;
+}
+main#blog > div.cards-wrapper > .card:hover:before, main#blog > div.cards-wrapper > .card:hover:after {
+  transform: scale(1);
+}
+main#blog > div.cards-wrapper > .card:before, main#blog > div.cards-wrapper > .card:after {
+  content: "";
+  transform: scale(0);
+  transform-origin: top left;
+  border-radius: 50%;
+  position: absolute;
+  left: -50%;
+  top: -50%;
+  z-index: 1;
+  transition: all, 0.5s;
+  transition-timing-function: ease-in-out;
+}
+main#blog > div.cards-wrapper > .card:before {
+  background: rgba(255, 255, 255, 0.3);
+  width: 250%;
+  height: 250%;
+}
+main#blog > div.cards-wrapper > .card:after {
+  background: rgba(255, 255, 255, 0.3);
+  width: 200%;
+  height: 200%;
+}
+@media screen and (min-width: 635px) {
+  main#blog > div.cards-wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+  main#blog > div.cards-wrapper > .card {
+    margin: 0 2rem;
+  }
+  main#blog > div.categories-container > h3 {
+    color: #BF555F;
+    font-size: 1.5rem;
+  }
+  main#blog > div.categories-container > div.categories > p {
+    padding: 0 1rem;
+    font-size: 1rem;
+  }
+  main#blog > div.categories-container > div.categories > p > span {
+    padding: 0 1rem;
+  }
+}
+
+main#team-page {
+  text-align: center;
+}
+main#team-page > h1 {
+  color: #BF555F;
+  font-size: 3.4rem;
+}
+main#team-page > div.hr-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+main#team-page > div.hr-container > hr.stylized-hr {
+  border: 0;
+  height: 1px;
+  background-color: #2E3532;
+  width: 80%;
+}
+main#team-page > div.container-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+main#team-page > div.container-cards > div.card {
+  width: 300px;
+  min-height: 300px;
+  height: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: 1rem;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #BF555F;
+  border-radius: 0.5rem;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+main#team-page > div.container-cards > div.card > div.person {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 300px;
+  max-height: 200px;
+}
+main#team-page > div.container-cards > div.card > div.person > div.image {
+  overflow: hidden;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  transform: scale(0.9);
+  transition: transform 0.2s ease-in-out;
+}
+main#team-page > div.container-cards > div.card > div.person > div.image > figure {
+  position: relative;
+}
+main#team-page > div.container-cards > div.card > div.person > div.image > figure > img {
+  width: 100px;
+  height: 100px;
+}
+main#team-page > div.container-cards > div.card > div.person > div.image > figure > figcaption {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+main#team-page > div.container-cards > div.card > div.person > div.image > figure > figcaption > img.img {
+  width: 100px;
+  height: 100px;
+  transition: transform 0.5s ease-in-out;
+}
+main#team-page > div.container-cards > div.card > div.person > div.infos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  width: 150px;
+}
+main#team-page > div.container-cards > div.card > div.person > div.infos > div.like {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+main#team-page > div.container-cards > div.card > div.person > div.infos > div.like > figure {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 0.5rem;
+}
+main#team-page > div.container-cards > div.card > div.person > div.infos > div.like > figure > img {
+  margin: 0.5rem;
+  width: 20px;
+  height: 20px;
+}
+main#team-page > div.container-cards > div.card > div.person > div.infos > div.like > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+main#team-page > div.container-cards > div.card > div.person > div.infos > div.like > div > p {
+  color: #E0E2DB;
+  margin: 0.2rem;
+}
+main#team-page > div.container-cards > div.card > div.person > div.infos > div.socials {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem;
+}
+main#team-page > div.container-cards > div.card > div.presentation {
+  max-width: 300px;
+  width: 90%;
+}
+main#team-page > div.container-cards > div.card > div.presentation > p {
+  color: #E0E2DB;
+}
+main#team-page > div.container-cards > div.card:hover > div.person > div.image {
+  transform: scale(1.1);
+}
+main#team-page > div.container-cards > div.card:hover > div.person > div.image > figure > figcaption > img.img {
+  transform: translate(10px, -2px);
+}
+@media screen and (max-width: 365px) {
+  main#team-page > div.container-cards > div.card {
+    width: 100%;
+    height: 450px;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+  }
+  main#team-page > div.container-cards > div.card > div.person {
+    max-width: 300px;
+    max-height: 200px;
+  }
+  main#team-page > div.container-cards > div.card > div.person > div.image {
+    width: 100px;
+    height: 100px;
+  }
+  main#team-page > div.container-cards > div.card > div.person > div.image > figure > img {
+    width: 100px;
+    height: 100px;
+  }
+  main#team-page > div.container-cards > div.card > div.person > div.image > figure > figcaption > img.img {
+    width: 100px;
+    height: 100px;
+  }
+  main#team-page > div.container-cards > div.card > div.person > div.infos {
+    padding: 1rem;
+    width: 150px;
+  }
+  main#team-page > div.container-cards > div.card > div.person > div.infos > div.like > figure {
+    margin-top: 0.5rem;
+  }
+  main#team-page > div.container-cards > div.card > div.person > div.infos > div.like > figure > img {
+    margin: 0.5rem;
+    width: 20px;
+    height: 20px;
+  }
+  main#team-page > div.container-cards > div.card > div.person > div.infos > div.socials {
+    width: 50%;
+    margin-top: 0.5rem;
+  }
+  main#team-page > div.container-cards > div.card > div.presentation {
+    max-width: unset;
+    width: 100%;
+    margin-top: 5rem;
+  }
+}
+
 main#error-page {
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
   justify-content: center;
-  margin-top: 150px;
 }
 main#error-page > section.left-side {
   margin: 1rem 0.5rem;
