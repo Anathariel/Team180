@@ -64,7 +64,7 @@ header {
   align-items: center;
   justify-content: space-evenly;
   position: fixed;
-  z-index: 1;
+  z-index: 999;
 }
 header > div.logo {
   margin: 1rem;
@@ -514,5 +514,132 @@ main#homepage > section#features > div.infinite-carousel .items > .button-contai
     background-color: #F8F8F8;
     border-radius: 50%;
     z-index: -99;
+  }
+}
+main#homepage > section#news {
+  text-align: center;
+}
+main#homepage > section#news > h2 {
+  text-decoration: underline;
+  text-shadow: rgba(7, 7, 7, 0.2392156863) 4px 0 4px;
+  margin: 0.5rem;
+  font-size: 3.2rem;
+}
+main#homepage > section#news > a {
+  text-decoration: underline;
+  text-shadow: rgba(7, 7, 7, 0.2392156863) 4px 0 4px;
+  margin: 0.5rem;
+  font-size: 1.5rem;
+  font-family: "Marvel-bold";
+}
+main#homepage > section#news > div.cards-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem;
+}
+main#homepage > section#news > div.cards-wrapper > .card {
+  height: 375px;
+  width: 300px;
+  position: relative;
+  overflow: hidden;
+  padding: 1rem;
+  margin: 0.5rem;
+  display: flex;
+  align-items: flex-end;
+  --bg-filter-opacity: 0.5;
+  background-image: linear-gradient(rgba(0, 0, 0, var(--bg-filter-opacity)), rgba(0, 0, 0, var(--bg-filter-opacity))), var(--bg-img);
+  box-shadow: rgba(7, 7, 7, 0.2392156863) 4px 0 4px;
+  border-radius: 0.5rem;
+  border: 10px solid #F8F8F8;
+  font-size: 1.5em;
+  color: #E0E2DB;
+  transition: all, 0.5s;
+  text-align: left;
+}
+main#homepage > section#news > div.cards-wrapper > .card > div {
+  margin: 0 2rem;
+  z-index: 9;
+}
+main#homepage > section#news > div.cards-wrapper > .card > div > h1,
+main#homepage > section#news > div.cards-wrapper > .card > div p {
+  color: #E0E2DB;
+  font-family: "Marvel-bold";
+}
+main#homepage > section#news > div.cards-wrapper > .card > div > h1 {
+  margin: 0;
+  font-size: 2.1rem;
+  line-height: 1.2em;
+}
+main#homepage > section#news > div.cards-wrapper > .card > div > p {
+  font-family: "AlegreyaSans-light";
+  font-size: 0.8rem;
+  margin-top: 0.5em;
+  line-height: 1.5rem;
+}
+main#homepage > section#news > div.cards-wrapper > .card > div > div.tags {
+  display: flex;
+  margin-top: 1rem;
+}
+main#homepage > section#news > div.cards-wrapper > .card > div > div.tags > div.tag {
+  font-size: 0.6rem;
+  font-family: "Marvel-bold";
+  background: #BF555F;
+  border-radius: 0.3rem;
+  padding: 0 0.5em;
+  margin-right: 0.5em;
+  line-height: 1.5em;
+  transition: all, 0.5s;
+}
+main#homepage > section#news > div.cards-wrapper > .card > div > div.date {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 1rem;
+  font-family: "Marvel-bold";
+  padding: 1em;
+  line-height: 1em;
+  opacity: 0.8;
+}
+main#homepage > section#news > div.cards-wrapper > .card:hover {
+  color: #BF555F;
+}
+main#homepage > section#news > div.cards-wrapper > .card:hover:hover h1, main#homepage > section#news > div.cards-wrapper > .card:hover:hover p {
+  color: #BF555F;
+}
+main#homepage > section#news > div.cards-wrapper > .card:hover .tags .tag {
+  background: #BF555F;
+  color: #F8F8F8;
+}
+main#homepage > section#news > div.cards-wrapper > .card:hover:before, main#homepage > section#news > div.cards-wrapper > .card:hover:after {
+  transform: scale(1);
+}
+main#homepage > section#news > div.cards-wrapper > .card:before, main#homepage > section#news > div.cards-wrapper > .card:after {
+  content: "";
+  transform: scale(0);
+  transform-origin: top left;
+  border-radius: 50%;
+  position: absolute;
+  left: -50%;
+  top: -50%;
+  z-index: 1;
+  transition: all, 0.5s;
+  transition-timing-function: ease-in-out;
+}
+main#homepage > section#news > div.cards-wrapper > .card:before {
+  background: rgba(255, 255, 255, 0.3);
+  width: 250%;
+  height: 250%;
+}
+main#homepage > section#news > div.cards-wrapper > .card:after {
+  background: rgba(255, 255, 255, 0.3);
+  width: 200%;
+  height: 200%;
+}
+@media screen and (min-width: 800px) {
+  main#homepage > section#news > div.cards-wrapper {
+    display: flex;
+    flex-direction: row;
   }
 }/*# sourceMappingURL=style.css.map */

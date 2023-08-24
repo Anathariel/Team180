@@ -1,14 +1,14 @@
-//& -------------------- SCSS VARIABLES -------------------- //
+//& -------------------- SCSS IABLES -------------------- //
 //^ --------- COLORS --------- //
 $black: #2E3532;
-$blacker:#070707;
+$blacker: #070707;
 
 $white-bg: #E0E2DB;
 $white-bg-lowopacity: #E0E2DBBF;
 $whiter: #F8F8F8;
 
-$main-color:#BF555F;
-$main-color-lowopacity:#BF555FBF;
+$main-color: #BF555F;
+$main-color-lowopacity: #BF555FBF;
 
 //* --------- FONT --------- //
 // <h1>
@@ -96,7 +96,7 @@ header {
     align-items: center;
     justify-content: space-evenly;
     position: fixed;
-    z-index: 1;
+    z-index: 999;
 
     &>div.logo {
         margin: 1rem;
@@ -612,6 +612,156 @@ main#homepage {
                         }
                     }
                 }
+            }
+        }
+    }
+
+    &>section#news {
+        text-align: center;
+
+        &>h2 {
+            text-decoration: underline;
+            text-shadow: $shadow;
+            margin: .5rem;
+            font-size: 3.2rem;
+        }
+
+        &>a {
+            text-decoration: underline;
+            text-shadow: $shadow;
+            margin: .5rem;
+            font-size: 1.5rem;
+            font-family: $marvel-bold;
+        }
+
+        &>div.cards-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 4rem;
+
+            &>.card {
+                height: 375px;
+                width: 300px;
+                position: relative;
+                overflow: hidden;
+                padding: 1rem;
+                margin: .5rem;
+                display: flex;
+                align-items: flex-end;
+                --bg-filter-opacity: 0.5;
+                background-image: linear-gradient(rgba(0, 0, 0, var(--bg-filter-opacity)), rgba(0, 0, 0, var(--bg-filter-opacity))), var(--bg-img);
+                box-shadow: $shadow;
+                border-radius: $radius;
+                border: 10px solid $whiter;
+                font-size: 1.5em;
+                color: $white-bg;
+                transition: all, .5s;
+                text-align: left;
+
+                &>div {
+                    margin: 0 2rem;
+                    z-index: 9;
+
+                    &>h1,
+                    p {
+                        color: $white-bg;
+                        font-family: $marvel-bold;
+                    }
+
+                    &>h1 {
+                        margin: 0;
+                        font-size: 2.1rem;
+                        line-height: 1.2em;
+                    }
+
+                    &>p {
+                        font-family: $alegreya-light;
+                        font-size: 0.8rem;
+                        margin-top: 0.5em;
+                        line-height: 1.5rem;
+                    }
+
+                    &>div.tags {
+                        display: flex;
+                        margin-top: 1rem;
+
+                        &>div.tag {
+                            font-size: 0.6rem;
+                            font-family: $marvel-bold;
+                            background: $main-color;
+                            border-radius: 0.3rem;
+                            padding: 0 0.5em;
+                            margin-right: 0.5em;
+                            line-height: 1.5em;
+                            transition: all, .5s;
+                        }
+                    }
+
+                    &>div.date {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        font-size: 1rem;
+                        font-family: $marvel-bold;
+                        padding: 1em;
+                        line-height: 1em;
+                        opacity: .8;
+                    }
+                }
+
+                &:hover {
+                    color: $main-color;
+
+                    &:hover h1,
+                    &:hover p {
+                        color: $main-color;
+                    }
+
+                    .tags .tag {
+                        background: $main-color;
+                        color: $whiter;
+                    }
+
+                    &:before,
+                    &:after {
+                        transform: scale(1);
+                    }
+                }
+
+                &:before,
+                &:after {
+                    content: '';
+                    transform: scale(0);
+                    transform-origin: top left;
+                    border-radius: 50%;
+                    position: absolute;
+                    left: -50%;
+                    top: -50%;
+                    z-index: 1;
+                    transition: all, .5s;
+                    transition-timing-function: ease-in-out;
+                }
+
+                &:before {
+                    background: rgba(255, 255, 255, 0.3);
+                    width: 250%;
+                    height: 250%;
+                }
+
+                &:after {
+                    background: rgba(255, 255, 255, 0.3);
+                    width: 200%;
+                    height: 200%;
+                }
+            }
+        }
+
+        @media screen and (min-width: 800px) {
+            &>div.cards-wrapper {
+                display: flex;
+                flex-direction: row;
             }
         }
     }
