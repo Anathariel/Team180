@@ -72,13 +72,11 @@ p {
     text-decoration: none;
     color: $black;
     font-family: $alegreya;
-    pointer-events: none;
 }
 
 h1 {
     font-family: $oranienbaum;
     color: $black;
-    pointer-events: none;
 }
 
 h2,
@@ -87,7 +85,6 @@ h4,
 h5,
 h6 {
     font-family: $marvel;
-    pointer-events: none;
 }
 
 main {
@@ -1152,22 +1149,22 @@ main#team-page {
                 height: 450px;
                 margin-top: .5rem;
                 padding: .5rem;
-    
+
                 &>div.person {
                     max-width: 300px;
                     max-height: 200px;
-    
+
                     &>div.image {
                         width: 100px;
                         height: 100px;
 
-    
-                        &>figure {    
+
+                        &>figure {
                             &>img {
                                 width: 100px;
                                 height: 100px;
                             }
-    
+
                             &>figcaption {
                                 &>img.img {
                                     width: 100px;
@@ -1176,16 +1173,16 @@ main#team-page {
                             }
                         }
                     }
-    
+
                     &>div.infos {
                         padding: 1rem;
                         width: 150px;
-    
+
                         &>div.like {
-    
+
                             &>figure {
                                 margin-top: .5rem;
-    
+
                                 &>img {
                                     margin: .5rem;
                                     width: 20px;
@@ -1193,18 +1190,18 @@ main#team-page {
                                 }
                             }
                         }
-    
+
                         &>div.socials {
                             width: 50%;
                             margin-top: .5rem;
                         }
                     }
                 }
-    
+
                 &>div.presentation {
                     max-width: unset;
                     width: 100%;
-                    margin-top:5rem;
+                    margin-top: 5rem;
                 }
             }
         }
@@ -1217,6 +1214,8 @@ main#error-page {
     flex-direction: column-reverse;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+
 
     &>section.left-side {
         margin: 1rem .5rem;
@@ -1275,14 +1274,12 @@ main#error-page {
     }
 
     &>figure {
-        margin: 1rem;
-        min-height: 300px;
         height: 100%;
         width: 100%;
         min-width: 320px;
+        min-height: 300px;
 
         &>img {
-            border-radius: 0.5rem;
             object-fit: cover;
         }
     }
@@ -1295,6 +1292,7 @@ main#error-page {
             width: 50%;
             height: 100%;
             border-radius: $radius;
+            transform: translate(30%);
         }
     }
 }

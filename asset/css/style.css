@@ -41,13 +41,11 @@ p {
   text-decoration: none;
   color: #2E3532;
   font-family: "AlegreyaSans-regular";
-  pointer-events: none;
 }
 
 h1 {
   font-family: "Oranienbaum-regular";
   color: #2E3532;
-  pointer-events: none;
 }
 
 h2,
@@ -56,7 +54,6 @@ h4,
 h5,
 h6 {
   font-family: "Marvel-regular";
-  pointer-events: none;
 }
 
 main {
@@ -1006,6 +1003,7 @@ main#error-page {
   flex-direction: column-reverse;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 main#error-page > section.left-side {
   margin: 1rem 0.5rem;
@@ -1054,14 +1052,12 @@ main#error-page > section.left-side > .button-error > button#home:hover {
   background-color: rgba(191, 85, 95, 0.7490196078);
 }
 main#error-page > figure {
-  margin: 1rem;
-  min-height: 300px;
   height: 100%;
   width: 100%;
   min-width: 320px;
+  min-height: 300px;
 }
 main#error-page > figure > img {
-  border-radius: 0.5rem;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -1074,5 +1070,6 @@ main#error-page > figure > img {
     width: 50%;
     height: 100%;
     border-radius: 0.5rem;
+    transform: translate(30%);
   }
 }/*# sourceMappingURL=style.css.map */
