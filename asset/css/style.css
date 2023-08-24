@@ -1,3 +1,4 @@
+/* color | offset-x | offset-y | blur-radius */
 *,
 *::before,
 *::after {
@@ -8,8 +9,6 @@
 .limit-size {
   width: 100%;
   max-width: 1440px;
-  margin: 0;
-  padding: 0;
 }
 
 body {
@@ -309,5 +308,211 @@ main#homepage > section#introduction > figure > figcaption > p {
   main#homepage > section#introduction > figure > figcaption > p {
     width: 80%;
     font-size: 1.2rem;
+  }
+}
+main#homepage > section#features {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main#homepage > section#features > div {
+  width: 85vw;
+}
+main#homepage > section#features > div > h2 {
+  text-decoration: underline;
+  text-shadow: rgba(7, 7, 7, 0.2392156863) 4px 0 4px;
+  margin: 0.5rem;
+  font-size: 3.2rem;
+}
+main#homepage > section#features > div.infinite-carousel {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+main#homepage > section#features > div.infinite-carousel .items {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+main#homepage > section#features > div.infinite-carousel .items > .item {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: all 300ms ease-in-out;
+  z-index: -1;
+  opacity: 0;
+}
+main#homepage > section#features > div.infinite-carousel .items > .item > img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main#homepage > section#features > div.infinite-carousel .items .item.active {
+  display: block;
+  opacity: 1;
+  z-index: 99;
+  box-shadow: 0px 0px 105px -35px rgba(0, 0, 0, 0.75);
+}
+main#homepage > section#features > div.infinite-carousel .items .item.prev {
+  z-index: 2;
+  opacity: 0.25;
+  transform: translate(-125%, -50%);
+  display: none;
+}
+main#homepage > section#features > div.infinite-carousel .items .item.next {
+  z-index: 2;
+  opacity: 0.25;
+  transform: translate(25%, -50%);
+  display: none;
+}
+main#homepage > section#features > div.infinite-carousel .items > .button-container {
+  position: absolute;
+  bottom: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-between;
+  width: 275px;
+  z-index: 100;
+}
+main#homepage > section#features > div.infinite-carousel .items > .button-container > .button {
+  color: #F8F8F8;
+  font-size: 32px;
+  cursor: pointer;
+  position: relative;
+  opacity: 0.75;
+  transition: all 300ms ease-in-out;
+}
+main#homepage > section#features > div.infinite-carousel .items > .button-container > .button:hover {
+  opacity: 1;
+}
+main#homepage > section#features > div.infinite-carousel .items > .button-container > .button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background-color: rgb(0, 0, 0);
+  border-radius: 50%;
+  z-index: -99;
+}
+@media screen and (min-width: 800px) {
+  main#homepage > section#features > div > p {
+    width: 50%;
+  }
+  main#homepage > section#features > div.infinite-carousel {
+    width: 100%;
+    height: 600px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  main#homepage > section#features > div.infinite-carousel .items {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
+  }
+  main#homepage > section#features > div.infinite-carousel .items > .item {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: all 300ms ease-in-out;
+    z-index: -1;
+    opacity: 0;
+  }
+  main#homepage > section#features > div.infinite-carousel .items > .item > img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  main#homepage > section#features > div.infinite-carousel .items > .item > figcaption {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    background-color: rgba(191, 85, 95, 0.7490196078);
+  }
+  main#homepage > section#features > div.infinite-carousel .items > .item > figcaption > p {
+    color: #F8F8F8;
+    font-size: 1.2rem;
+    font-family: "Marvel-regular";
+  }
+  main#homepage > section#features > div.infinite-carousel .items .item.active {
+    display: block;
+    opacity: 1;
+    z-index: 99;
+    box-shadow: 0px 0px 105px -35px rgba(0, 0, 0, 0.75);
+  }
+  main#homepage > section#features > div.infinite-carousel .items .item.prev {
+    display: block;
+    z-index: 2;
+    opacity: 0.25;
+    transform: translate(-125%, -50%);
+  }
+  main#homepage > section#features > div.infinite-carousel .items .item.next {
+    display: block;
+    z-index: 2;
+    opacity: 0.25;
+    transform: translate(25%, -50%);
+  }
+  main#homepage > section#features > div.infinite-carousel .items > .button-container {
+    position: absolute;
+    bottom: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    z-index: 100;
+  }
+  main#homepage > section#features > div.infinite-carousel .items > .button-container > .button {
+    color: #F8F8F8;
+    font-size: 32px;
+    cursor: pointer;
+    position: relative;
+    opacity: 0.75;
+    transition: all 300ms ease-in-out;
+  }
+  main#homepage > section#features > div.infinite-carousel .items > .button-container > .button:hover {
+    opacity: 1;
+  }
+  main#homepage > section#features > div.infinite-carousel .items > .button-container > .button::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background-color: #F8F8F8;
+    border-radius: 50%;
+    z-index: -99;
   }
 }/*# sourceMappingURL=style.css.map */
