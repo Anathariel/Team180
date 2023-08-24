@@ -1,6 +1,7 @@
 //& -------------------- SCSS IABLES -------------------- //
 //^ --------- COLORS --------- //
 $black: #2E3532;
+$black-lowopacity: #2E3532BF;
 $blacker: #070707;
 
 $white-bg: #E0E2DB;
@@ -39,6 +40,7 @@ $shadow : #0707073d 4px 0 4px;
 .limit-size {
     width: 100%;
     max-width: 1440px;
+    margin: 0 auto;
 }
 
 body {
@@ -305,7 +307,6 @@ footer {
 }
 
 //^ --------- Homepage --------- //
-//* ------- HERO ------- //
 main#homepage {
     margin-top: 150px;
 
@@ -762,6 +763,99 @@ main#homepage {
                 display: flex;
                 flex-direction: row;
             }
+        }
+    }
+}
+
+//^ --------- Blog --------- //
+
+//^ --------- Team --------- //
+
+//^ --------- 404  --------- //
+main#error-page {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    margin-top: 150px;
+
+    &>section.left-side {
+        margin: 1rem .5rem;
+
+        &>p:first-child {
+            color: $main-color;
+            font-family: $marvel;
+            font-size: 1.8rem;
+        }
+
+        &>h1 {
+            font-size: 2.8rem;
+        }
+
+        &>p {
+            font-size: 1rem;
+            font-family: $alegreya-light;
+        }
+
+        &>.button-error {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            margin: 1rem 0;
+
+            &>button {
+                padding: .5rem 1rem;
+                border-radius: $radius;
+                outline: transparent;
+                cursor: pointer;
+                color: $white-bg;
+                font-family: $alegreya-light;
+                font-size: 1.5rem;
+            }
+
+            &>button#return {
+                background-color: $black;
+                border: 1px solid $black;
+
+                &:hover {
+                    border: 1px solid $white-bg;
+                    background-color: $black-lowopacity;
+                }
+            }
+
+            &>button#home {
+                background-color: $main-color;
+                border: 1px solid $main-color;
+
+                &:hover {
+                    border: 1px solid $white-bg;
+                    background-color: $main-color-lowopacity;
+                }
+            }
+        }
+    }
+
+    &>figure {
+        margin: 1rem;
+        min-height: 300px;
+        height: 100%;
+        width: 100%;
+        min-width: 320px;
+
+        &>img {
+            border-radius: 0.5rem;
+            object-fit: cover;
+        }
+    }
+
+    @media screen and (min-width: 635px) {
+        display: flex;
+        flex-direction: row;
+
+        &>figure {
+            width: 50%;
+            height: 100%;
+            border-radius: $radius;
         }
     }
 }
