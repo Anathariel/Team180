@@ -618,18 +618,17 @@ main#homepage {
 
     &>section#news {
         text-align: center;
+        min-height: 650px;
 
         &>h2 {
             text-decoration: underline;
             text-shadow: $shadow;
-            margin: .5rem;
             font-size: 3.2rem;
         }
 
         &>a {
             text-decoration: underline;
             text-shadow: $shadow;
-            margin: .5rem;
             font-size: 1.5rem;
             font-family: $marvel-bold;
         }
@@ -639,11 +638,11 @@ main#homepage {
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 4rem;
+            padding: 1rem;
 
             &>.card {
-                height: 375px;
-                width: 300px;
+                height: 355px;
+                width: 250px;
                 position: relative;
                 overflow: hidden;
                 padding: 1rem;
