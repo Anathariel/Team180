@@ -439,6 +439,21 @@ main#homepage {
                         height: 100%;
                         object-fit: cover;
                     }
+
+                    &>figcaption {
+                        position: absolute;
+                        bottom: 10px;
+                        left: 0;
+                        right: 0;
+                        text-align: center;
+                        background-color: $main-color-lowopacity;
+
+                        &>p {
+                            color: $whiter;
+                            font-size: 1.2rem;
+                            font-family: $marvel;
+                        }
+                    }
                 }
 
                 .item.active {
@@ -1030,9 +1045,9 @@ main#team-page {
 
             &>div.person {
                 display: flex;
+                flex-direction: row;
                 align-items: center;
                 justify-content: center;
-                flex-wrap: wrap;
                 max-width: 300px;
                 max-height: 200px;
 
@@ -1113,6 +1128,12 @@ main#team-page {
                         justify-content: space-between;
                         align-items: center;
                         margin: .5rem;
+
+                        &>a>img{
+                            &:hover{
+                                transform: scale(1.1);
+                            }
+                        }
                     }
                 }
             }
@@ -1141,69 +1162,133 @@ main#team-page {
             }
         }
     }
+}
 
-    @media screen and (max-width: 365px) {
-        &>div.container-cards {
-            &>div.card {
-                width: 100%;
-                height: 450px;
-                margin-top: .5rem;
-                padding: .5rem;
+//^ --------- 404  --------- //
+main#presentation {
+    margin: 150px 0 100px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
 
-                &>div.person {
-                    max-width: 300px;
-                    max-height: 200px;
+    &>figure {
+        position: relative;
+        margin: .5rem 2rem;
 
-                    &>div.image {
-                        width: 100px;
-                        height: 100px;
+        &>img {
+            min-width: 300px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: $radius;
+        }
 
+        &>figcaption {
+            position: absolute;
+            bottom: 10px;
+            right: 20px;
 
-                        &>figure {
-                            &>img {
-                                width: 100px;
-                                height: 100px;
-                            }
+            &>div {
+                display: flex;
+                justify-content: space-evenly;
+                margin: .5rem;
 
-                            &>figcaption {
-                                &>img.img {
-                                    width: 100px;
-                                    height: 100px;
-                                }
-                            }
-                        }
+                &>a>img {
+                    width: 35px;
+                    height: 35px;
+                    
+                    &:hover{
+                        transform: scale(1.1);
                     }
-
-                    &>div.infos {
-                        padding: 1rem;
-                        width: 150px;
-
-                        &>div.like {
-
-                            &>figure {
-                                margin-top: .5rem;
-
-                                &>img {
-                                    margin: .5rem;
-                                    width: 20px;
-                                    height: 20px;
-                                }
-                            }
-                        }
-
-                        &>div.socials {
-                            width: 50%;
-                            margin-top: .5rem;
-                        }
-                    }
-                }
-
-                &>div.presentation {
-                    max-width: unset;
-                    width: 100%;
-                    margin-top: 5rem;
                 }
             }
+
+            &>button {
+                background-color: $main-color;
+                color: $white-bg;
+                border: transparent;
+                outline: transparent;
+                border-radius: $radius;
+                font-size: 2rem;
+                font-family: $alegreya-light;
+                cursor: pointer;
+                width: 180px;
+                height: 50px;
+                text-align: center;
+
+                &:hover{
+                    transform: scale(1.1);
+                    border: 1px solid $white-bg;
+                    background-color: $main-color-lowopacity;
+                }
+            }
+        }
+    }
+
+    &>section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        text-align: center;
+
+        &>h1 {
+            color: $main-color;
+            font-family: $oranienbaum;
+            font-size: 3rem;
+        }
+
+        &>div {
+            min-width: 300px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            &>figure {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &>img {
+                    margin: 1rem .5rem;
+                }
+
+                &>figcaption {
+                    &>p {
+                        font-family: $marvel-bold;
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+        }
+
+        &>p {
+            margin: 1rem;
+            font-family: $alegreya-light;
+        }
+    }
+
+    @media screen and (min-width: 635px) {
+        flex-direction: row;
+        margin: 170px 50px 20px 50px;
+
+        &>figure {
+            width: 40%;
+            height: 100%;
+
+            &>img {
+                min-width: unset;
+            }
+        }
+
+        &>section {
+            width: 50%;
+            height: 100%;
+            justify-content: flex-start;
+            margin: 5rem 1rem 1rem 1rem;
         }
     }
 }
@@ -1258,6 +1343,8 @@ main#error-page {
                 &:hover {
                     border: 1px solid $white-bg;
                     background-color: $black-lowopacity;
+                    transform: scale(1.1);
+
                 }
             }
 
@@ -1268,6 +1355,8 @@ main#error-page {
                 &:hover {
                     border: 1px solid $white-bg;
                     background-color: $main-color-lowopacity;
+                    transform: scale(1.1);
+
                 }
             }
         }

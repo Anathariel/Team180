@@ -362,6 +362,19 @@ main#homepage > section#features > div.infinite-carousel .items > .item > img {
   -o-object-fit: cover;
      object-fit: cover;
 }
+main#homepage > section#features > div.infinite-carousel .items > .item > figcaption {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  background-color: rgba(191, 85, 95, 0.7490196078);
+}
+main#homepage > section#features > div.infinite-carousel .items > .item > figcaption > p {
+  color: #F8F8F8;
+  font-size: 1.2rem;
+  font-family: "Marvel-regular";
+}
 main#homepage > section#features > div.infinite-carousel .items .item.active {
   display: block;
   opacity: 1;
@@ -865,9 +878,9 @@ main#team-page > div.container-cards > div.card {
 }
 main#team-page > div.container-cards > div.card > div.person {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
   max-width: 300px;
   max-height: 200px;
 }
@@ -939,6 +952,9 @@ main#team-page > div.container-cards > div.card > div.person > div.infos > div.s
   align-items: center;
   margin: 0.5rem;
 }
+main#team-page > div.container-cards > div.card > div.person > div.infos > div.socials > a > img:hover {
+  transform: scale(1.1);
+}
 main#team-page > div.container-cards > div.card > div.presentation {
   max-width: 300px;
   width: 90%;
@@ -952,49 +968,114 @@ main#team-page > div.container-cards > div.card:hover > div.person > div.image {
 main#team-page > div.container-cards > div.card:hover > div.person > div.image > figure > figcaption > img.img {
   transform: translate(10px, -2px);
 }
-@media screen and (max-width: 365px) {
-  main#team-page > div.container-cards > div.card {
-    width: 100%;
-    height: 450px;
-    margin-top: 0.5rem;
-    padding: 0.5rem;
+
+main#presentation {
+  margin: 150px 0 100px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+main#presentation > figure {
+  position: relative;
+  margin: 0.5rem 2rem;
+}
+main#presentation > figure > img {
+  min-width: 300px;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 0.5rem;
+}
+main#presentation > figure > figcaption {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+}
+main#presentation > figure > figcaption > div {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0.5rem;
+}
+main#presentation > figure > figcaption > div > a > img {
+  width: 35px;
+  height: 35px;
+}
+main#presentation > figure > figcaption > div > a > img:hover {
+  transform: scale(1.1);
+}
+main#presentation > figure > figcaption > button {
+  background-color: #BF555F;
+  color: #E0E2DB;
+  border: transparent;
+  outline: transparent;
+  border-radius: 0.5rem;
+  font-size: 2rem;
+  font-family: "AlegreyaSans-light";
+  cursor: pointer;
+  width: 180px;
+  height: 50px;
+  text-align: center;
+}
+main#presentation > figure > figcaption > button:hover {
+  transform: scale(1.1);
+  border: 1px solid #E0E2DB;
+  background-color: rgba(191, 85, 95, 0.7490196078);
+}
+main#presentation > section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+}
+main#presentation > section > h1 {
+  color: #BF555F;
+  font-family: "Oranienbaum-regular";
+  font-size: 3rem;
+}
+main#presentation > section > div {
+  min-width: 300px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+main#presentation > section > div > figure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main#presentation > section > div > figure > img {
+  margin: 1rem 0.5rem;
+}
+main#presentation > section > div > figure > figcaption > p {
+  font-family: "Marvel-bold";
+  font-size: 1.5rem;
+}
+main#presentation > section > p {
+  margin: 1rem;
+  font-family: "AlegreyaSans-light";
+}
+@media screen and (min-width: 635px) {
+  main#presentation {
+    flex-direction: row;
+    margin: 170px 50px 20px 50px;
   }
-  main#team-page > div.container-cards > div.card > div.person {
-    max-width: 300px;
-    max-height: 200px;
+  main#presentation > figure {
+    width: 40%;
+    height: 100%;
   }
-  main#team-page > div.container-cards > div.card > div.person > div.image {
-    width: 100px;
-    height: 100px;
+  main#presentation > figure > img {
+    min-width: unset;
   }
-  main#team-page > div.container-cards > div.card > div.person > div.image > figure > img {
-    width: 100px;
-    height: 100px;
-  }
-  main#team-page > div.container-cards > div.card > div.person > div.image > figure > figcaption > img.img {
-    width: 100px;
-    height: 100px;
-  }
-  main#team-page > div.container-cards > div.card > div.person > div.infos {
-    padding: 1rem;
-    width: 150px;
-  }
-  main#team-page > div.container-cards > div.card > div.person > div.infos > div.like > figure {
-    margin-top: 0.5rem;
-  }
-  main#team-page > div.container-cards > div.card > div.person > div.infos > div.like > figure > img {
-    margin: 0.5rem;
-    width: 20px;
-    height: 20px;
-  }
-  main#team-page > div.container-cards > div.card > div.person > div.infos > div.socials {
+  main#presentation > section {
     width: 50%;
-    margin-top: 0.5rem;
-  }
-  main#team-page > div.container-cards > div.card > div.presentation {
-    max-width: unset;
-    width: 100%;
-    margin-top: 5rem;
+    height: 100%;
+    justify-content: flex-start;
+    margin: 5rem 1rem 1rem 1rem;
   }
 }
 
@@ -1042,6 +1123,7 @@ main#error-page > section.left-side > .button-error > button#return {
 main#error-page > section.left-side > .button-error > button#return:hover {
   border: 1px solid #E0E2DB;
   background-color: rgba(46, 53, 50, 0.7490196078);
+  transform: scale(1.1);
 }
 main#error-page > section.left-side > .button-error > button#home {
   background-color: #BF555F;
@@ -1050,6 +1132,7 @@ main#error-page > section.left-side > .button-error > button#home {
 main#error-page > section.left-side > .button-error > button#home:hover {
   border: 1px solid #E0E2DB;
   background-color: rgba(191, 85, 95, 0.7490196078);
+  transform: scale(1.1);
 }
 main#error-page > figure {
   height: 100%;
